@@ -1,0 +1,272 @@
+<header class="util">
+  <div class="container_top"> 
+    <div class="deskstop_top2">
+       <i class="fa fa-search  w3-medium"></i>
+    </div>
+    
+    <div class="mobile_top2"></div>
+
+    <div id="top3">
+         {% include 'search-bar' %}
+    </div>
+    
+    <div id="top4">
+      <a href="/cart" id="CartButton">
+        <span class="icon-fallback-text">
+          <span class="icon icon-cart" aria-hidden="true"></span>
+        </span>
+        <span id="CartCount">{{ cart.item_count }}</span>
+        {{ 'layout.cart.title' | t }}
+        <span id="CartCost" class="money">{% unless cart.item_count == 0 %}{{ cart.total_price | money }}{% endunless %}</span>
+     </a>
+      {% if settings.ajax_cart_enable %}
+        {% include 'cart-preview' %}
+      {% endif %}
+    </div>
+    
+  </div>
+    
+ 
+  <div class="wrapper">
+    <div class="left-wrapper">
+      <ul class="text-links">
+        <li class="mobile-menu">
+          <a href="#menu" class="toggle-menu menu-link">
+            <span class="icon-text">
+              <span class="icon icon-menu" aria-hidden="true"></span>
+              <span class="text" data-close-text="{{ 'layout.drawers.close_menu' | t }}">{{ 'layout.navigation.menu' | t }}</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="center-wrapper">
+      <a href="/"><img src="https://cdn.shopify.com/s/files/1/2581/7224/files/pk_1.png?v=1673495370" height="auto" width="250px"></a>
+    </div>
+ 
+    <div class="right-wrapper"></div>
+  </div>
+</header>
+
+<style>
+  
+  
+  
+  
+header.util .wrapper .left-wrapper, header.util .wrapper .right-wrapper {
+    margin: 14px 20px !important;
+}
+
+
+  
+  
+  /* header-Logo  */
+
+  .site-nav .right-wrapper {
+    background-color: #fff;
+  }
+ .util { 
+    z-index: 991;
+    position: sticky;
+    top: 0px;
+ }
+   
+ .container_top { 
+   display: flex;
+   flex-flow: row nowrap; /* Align on the same line */
+   text-decoration: none;    
+   box-shadow: 0px 0px 12px 0px black;     
+   background:rgba(150, 150, 150, 0.2);
+   box-shadow: inset 0 -1px 1px rgba(0,0,0,0.5);
+   padding:2px;
+   word-spacing: 5px;
+ }
+  
+  
+  #social1{
+    border:solid 5px gray;
+/*     background:#f5f5f5; */
+
+  }
+  
+  
+  i {
+    padding: 1px;
+    color:gray;
+    bottom:2px;
+  }
+  
+  
+/*  edited by Moncel  */
+  
+  .container_top{
+    width:100%;
+    text-align:center;
+    background-color: #fff;
+  
+    
+}
+
+  .deskstop_top2{
+  /*   edited by Moncel */
+    float: left;
+    width: 33.3%;
+    padding: 10px;
+    margin: 0 auto;
+    padding-top: 12px;
+  
+    
+}
+  
+  
+ .deskstop_top2 {
+   display: block;
+ }
+  
+  .mobile_top2 { 
+    display: none;
+  }
+@media screen and (max-width:1500px)
+{
+  .deskstop_top2 {
+    display: block;
+  }
+  .mobile_top2 { 
+    display: block;
+  }
+
+}
+
+  #top3 {
+    float: right;
+    width: 33.3%;
+    padding: 2px;
+    @include clearfix(): ;
+    padding-top: 5px;
+    margin-left: 20px;
+    
+      
+   
+}
+  
+  
+  #top4{
+    display: inline-block;
+    width: 33.3%;
+    @include clearfix(): ;
+    margin: 3px;
+    padding: 5px;
+     
+  }
+  
+  
+ 
+/*   edited by Moncel */
+  
+  .container_top p6 {
+    color:#000;
+    font-size: 10px;
+  }
+  
+/*   header background and elements*/
+  header.util .wrapper {
+
+    background: #f3f3f3;
+}
+  
+  header.util .currency-picker-contain {
+
+    color: #fff;
+    border-left: 1px solid #fff;
+
+}
+  
+  header.util li a {
+    display: inline-block;
+    padding: 4px 6px;
+    color: #000;
+}
+  
+  .site-nav .right-wrapper {
+    background-color: #f3f3f3;
+}
+   @media screen and (max-width: 1023px) {
+   
+ }
+  
+  @media only screen and (max-width:480px) {
+
+/* HEADER */
+    
+header.util .wrapper {
+    padding: 10px !important;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+header.util .wrapper .left-wrapper {
+    width: 100%;
+    float: none;
+    clear: both;
+    text-align: center;
+    order: 2;
+}
+
+header.util .center-wrapper {
+    width: 100%;
+    text-align: center;
+    order: 1;
+}
+
+header.util .left-wrapper {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+    
+header.util .right-wrapper {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    display: none;
+}
+    
+    
+    
+    #top3 {
+  
+    width: 50%;
+
+}
+    #top4 {
+    width: 50%;
+
+}
+    
+    header.util .wrapper .left-wrapper, header.util .wrapper .right-wrapper {
+      margin: 0 auto !important;
+      width: 100%;
+      padding: 5px 0px;
+}
+
+    header.util .currency-picker-contain {
+      margin-left: 3px;
+      padding: 2.5px 6px;      
+    }
+    
+    .deskstop_top2 {
+      display: none;
+    }
+    
+    
+}
+
+}
+  </style>
+   
